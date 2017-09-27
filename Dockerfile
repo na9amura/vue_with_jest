@@ -1,20 +1,20 @@
 FROM ruby:2.4.1
 
-ENV APP_ROOT /usr/src/bookman
+ENV APP_ROOT /usr/src/app
 
 WORKDIR $APP_ROOT
 
 # for yarn
-RUN apt-get update
-RUN apt-get install apt-transport-https
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN \
+  apt-get update && \
+  apt-get install apt-transport-https && \
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 # for node
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 
 RUN \
-  apt-get update && \
   apt-get install -y \
     nodejs \
     mysql-client \
@@ -36,10 +36,7 @@ RUN \
   bundle install && \
   rm -rf ~/.gem
 
-RUN gem install foreman
-
 COPY . $APP_ROOT
 
-EXPOSE 9292 8080
-#CMD ["rails", "server", "-b", "0.0.0.0", "-p","9292"]
-CMD foreman start
+EXPOSE 9292
+CMD ["rails", "server", "-b", "0.0.0.0", "-p","3001"]
