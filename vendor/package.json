@@ -1,0 +1,7 @@
+{
+  "jest": {
+    "testPathDirs": ["<rootDir>/../app/javascript/packs"],
+    "moduleDirectories": ["<rootDir>/node_modules"],
+    "moduleFileExtensions": ["js", "vue"]
+  }
+}

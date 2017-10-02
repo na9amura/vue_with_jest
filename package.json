@@ -8,6 +8,20 @@
     "vue-template-compiler": "^2.4.4"
   },
   "devDependencies": {
+    "babel-jest": "^21.2.0",
+    "babel-polyfill": "^6.26.0",
+    "jest": "^21.2.1",
+    "jest-vue-preprocessor": "^1.2.0",
     "webpack-dev-server": "^2.9.1"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/jest"
+  },
+  "moduleNameMapper": {
+    "^vue$": "vue/dist/vue.common.js"
+  },
+  "transform": {
+    "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+    ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue-preprocessor"
   }
 }
