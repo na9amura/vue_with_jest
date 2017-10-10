@@ -21,7 +21,7 @@
     "roots": ["<rootDir>/app/javascript/packs"],
     "moduleDirectories": ["<rootDir>/node_modules"],
     "moduleNameMapper": {
-      "^vue$": "<rootDir>/node_modules/vue/dist/vue.common.js"
+      "^vue$": "vue/dist/vue.common.js"
     },
     "moduleFileExtensions": [
       "js",
