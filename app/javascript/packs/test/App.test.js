@@ -1,23 +1,22 @@
-const Vue = require('vue')
-const App = require('../App.vue')
+import { shallow } from 'vue-test-utils'
+import App from '../App.vue'
 
 describe('App.test.js', () => {
-  let cmp, vm
+  let component
 
   beforeEach(() => {
-    cmp = Vue.extend(App)
-    vm = new cmp({
+    component = shallow(App, {
       data: {
         messages: ["Cat"]
       }
-    }).$mount()
+    })
   })
 
   it('equals messages to ["Cat"]', () => {
-    expect(vm.messages).toEqual(["Cat"])
+    expect(component.vm.messages).toEqual(["Cat"])
   })
 
   it('has the expected html structure', () => {
-    expect(vm.$el).toMatchSnapshot()
+    expect(component.element).toMatchSnapshot()
   })
 })

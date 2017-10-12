@@ -4,12 +4,6 @@ exports[`App.test.js has the expected html structure 1`] = `
 <div
   id="app"
 >
-  <ul>
-    <li>
-      
-    Cat
-  
-    </li>
-  </ul>
+  <!---->
 </div>
 `;
