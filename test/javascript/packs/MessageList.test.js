@@ -1,5 +1,5 @@
 import { shallow } from 'vue-test-utils'
-import MessageList from '../components/MessageList'
+import MessageList from 'components/MessageList'
 
 describe('MessageList.test.js', () => {
   let component

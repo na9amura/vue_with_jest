@@ -20,9 +20,10 @@
   },
   "jest": {
     "roots": [
-      "<rootDir>/app/javascript/packs"
+      "<rootDir>/test/javascript/packs"
     ],
     "moduleDirectories": [
+      "<rootDir>/app/javascript/packs",
       "<rootDir>/node_modules"
     ],
     "moduleNameMapper": {
